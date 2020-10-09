@@ -1,0 +1,1339 @@
+PS C:\SenZhang\vat_tf-master> python train_semisup.py --dataset=cifar10 --data_dir=./dataset/cifar10/ --log_dir=./log/cifar10/ --num_epochs=500 --epoch_decay_start=460 --epsilon=10.0 --method=vat
+C:\ProgramData\Anaconda3\lib\site-packages\h5py\__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float)
+.type`.
+  from ._conv import register_converters as _register_converters
+10.0 False
+filenames in queue: ['seed1\\labeled_train.tfrecords']
+filenames in queue: ['seed1\\unlabeled_train.tfrecords']
+filenames in queue: ['seed1\\labeled_train.tfrecords']
+filenames in queue: ['seed1\\unlabeled_train.tfrecords']
+filenames in queue: ['seed1\\test.tfrecords']
+WARNING:tensorflow:From C:\SenZhang\vat_tf-master\layers.py:123: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
+
+WARNING:tensorflow:From C:\SenZhang\vat_tf-master\vat.py:34: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From C:\SenZhang\vat_tf-master\vat.py:35: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From train_semisup.py:163: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+Training...
+2020-10-08 23:42:44.524586: I T:\src\github\tensorflow\tensorflow\core\platform\cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-10-08 23:42:45.229679: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1392] Found device 0 with properties:
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:82:00.0
+totalMemory: 11.00GiB freeMemory: 9.03GiB
+2020-10-08 23:42:45.251932: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1471] Adding visible gpu devices: 0
+2020-10-08 23:42:46.275577: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-08 23:42:46.284704: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:958]      0
+2020-10-08 23:42:46.292046: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:971] 0:   N
+2020-10-08 23:42:46.300962: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8725 MB memory) -> physical GPU (device: 0, name
+: GeForce RTX 2080 Ti, pci bus id: 0000:82:00.0, compute capability: 7.5)
+Epoch: 0 CE_loss_train: 1.9271311557292938 elapsed_time: 128.24177813529968
+Epoch: 1 CE_loss_train: 1.6205211728811264 elapsed_time: 73.85854840278625
+Epoch: 2 CE_loss_train: 1.458913785815239 elapsed_time: 73.37094402313232
+Epoch: 3 CE_loss_train: 1.2990684458613395 elapsed_time: 73.88172817230225
+Epoch: 4 CE_loss_train: 1.1626384422183036 elapsed_time: 73.38732886314392
+train-NLL 0.6203750002384186
+train-Acc 0.7803999984264374
+train-AT_loss 7.2181226348876955
+train-VAT_loss 3.748247332572937
+test-NLL 1.1752508223056792
+test-Acc 0.613800003528595
+test-AT_loss 8.352108192443847
+test-VAT_loss 3.7074379444122316
+Epoch: 5 CE_loss_train: 1.0149900750815868 elapsed_time: 73.3174684047699
+Epoch: 6 CE_loss_train: 0.9191076873242855 elapsed_time: 73.84801936149597
+Epoch: 7 CE_loss_train: 0.8450576175749301 elapsed_time: 73.39118266105652
+Epoch: 8 CE_loss_train: 0.7873906481266022 elapsed_time: 73.84440279006958
+Epoch: 9 CE_loss_train: 0.7403973496705294 elapsed_time: 73.36864972114563
+train-NLL 0.047306031361222266
+train-Acc 0.9896000075340271
+train-AT_loss 9.251878433227539
+train-VAT_loss 5.074771795272827
+test-NLL 0.8455600953102111
+test-Acc 0.7628000009059906
+test-AT_loss 11.421516208648681
+test-VAT_loss 5.233200092315673
+Epoch: 10 CE_loss_train: 0.7353259621560574 elapsed_time: 73.79107236862183
+Epoch: 11 CE_loss_train: 0.7254499386996031 elapsed_time: 73.29461622238159
+Epoch: 12 CE_loss_train: 0.7027115049213171 elapsed_time: 73.71936249732971
+Epoch: 13 CE_loss_train: 0.6368959184736014 elapsed_time: 73.26158237457275
+Epoch: 14 CE_loss_train: 0.6498483932763338 elapsed_time: 73.63572716712952
+train-NLL 0.021401359355077147
+train-Acc 0.9934000062942505
+train-AT_loss 9.536298198699951
+train-VAT_loss 6.010390281677246
+test-NLL 1.02016646027565
+test-Acc 0.7524000012874603
+test-AT_loss 12.751462345123292
+test-VAT_loss 5.932174167633057
+Epoch: 15 CE_loss_train: 0.6729341113567352 elapsed_time: 73.18856930732727
+Epoch: 16 CE_loss_train: 0.6320655597001315 elapsed_time: 73.72388887405396
+Epoch: 17 CE_loss_train: 0.62399848125875 elapsed_time: 73.25175499916077
+Epoch: 18 CE_loss_train: 0.6362876253575087 elapsed_time: 73.69483017921448
+Epoch: 19 CE_loss_train: 0.6388879205286503 elapsed_time: 73.24667859077454
+train-NLL 0.003892450877465308
+train-Acc 0.9998000001907349
+train-AT_loss 9.902055339813232
+train-VAT_loss 6.774636068344116
+test-NLL 0.8127171045541763
+test-Acc 0.8037999963760376
+test-AT_loss 14.111536865234376
+test-VAT_loss 6.995395450592041
+Epoch: 20 CE_loss_train: 0.6276715931296348 elapsed_time: 73.68819260597229
+Epoch: 21 CE_loss_train: 0.6254543982446193 elapsed_time: 73.21922183036804
+Epoch: 22 CE_loss_train: 0.6309750387072564 elapsed_time: 73.7275333404541
+Epoch: 23 CE_loss_train: 0.5806472212821245 elapsed_time: 73.26606941223145
+Epoch: 24 CE_loss_train: 0.5793812147527934 elapsed_time: 73.69020414352417
+train-NLL 0.010221164280083031
+train-Acc 0.9978000020980835
+train-AT_loss 10.079163761138917
+train-VAT_loss 6.373650245666504
+test-NLL 0.9290991914272309
+test-Acc 0.7901999986171723
+test-AT_loss 13.39523899078369
+test-VAT_loss 6.389382276535034
+Epoch: 25 CE_loss_train: 0.5830825507640839 elapsed_time: 73.37230706214905
+Epoch: 26 CE_loss_train: 0.5771767315268517 elapsed_time: 73.75317144393921
+Epoch: 27 CE_loss_train: 0.6013280127942562 elapsed_time: 73.25868391990662
+Epoch: 28 CE_loss_train: 0.5773846515268087 elapsed_time: 73.69033145904541
+Epoch: 29 CE_loss_train: 0.5591420817375183 elapsed_time: 73.25223135948181
+train-NLL 0.003737807762227021
+train-Acc 0.9988000011444091
+train-AT_loss 23.273466930389404
+train-VAT_loss 14.397746572494507
+test-NLL 0.9283674252033234
+test-Acc 0.801399997472763
+test-AT_loss 23.750267601013185
+test-VAT_loss 13.519598903656005
+Epoch: 30 CE_loss_train: 0.6189624366164207 elapsed_time: 73.63813805580139
+Epoch: 31 CE_loss_train: 0.5988582073897123 elapsed_time: 73.27150464057922
+Epoch: 32 CE_loss_train: 0.542121197655797 elapsed_time: 73.74701476097107
+Epoch: 33 CE_loss_train: 0.5387161134183407 elapsed_time: 73.23554229736328
+Epoch: 34 CE_loss_train: 0.5635263453423976 elapsed_time: 73.58221197128296
+train-NLL 0.007494266532594338
+train-Acc 0.9974000024795532
+train-AT_loss 8.920060939788819
+train-VAT_loss 5.914092502593994
+test-NLL 0.9426715219020844
+test-Acc 0.7867999958992005
+test-AT_loss 12.989774341583251
+test-VAT_loss 5.713597345352173
+Epoch: 35 CE_loss_train: 0.5416636911034584 elapsed_time: 73.30212807655334
+Epoch: 36 CE_loss_train: 0.586161639764905 elapsed_time: 73.69554710388184
+Epoch: 37 CE_loss_train: 0.5563714776188136 elapsed_time: 73.26523685455322
+Epoch: 38 CE_loss_train: 0.5529366594552994 elapsed_time: 73.67932558059692
+Epoch: 39 CE_loss_train: 0.5243607401102781 elapsed_time: 73.22410011291504
+train-NLL 0.00054955548082944
+train-Acc 1.0
+train-AT_loss 14.173385772705078
+train-VAT_loss 10.473911809921265
+test-NLL 0.8958271104097366
+test-Acc 0.8189999961853027
+test-AT_loss 17.718529834747315
+test-VAT_loss 9.980664110183715
+Epoch: 40 CE_loss_train: 0.5039058052748442 elapsed_time: 73.59372639656067
+Epoch: 41 CE_loss_train: 0.5286316952854395 elapsed_time: 73.25672674179077
+Epoch: 42 CE_loss_train: 0.5536657381802798 elapsed_time: 73.65932655334473
+Epoch: 43 CE_loss_train: 0.5209668951109052 elapsed_time: 73.20708680152893
+Epoch: 44 CE_loss_train: 0.5393813998252154 elapsed_time: 73.60644888877869
+train-NLL 0.007076965093147009
+train-Acc 0.9982000017166137
+train-AT_loss 13.99183937072754
+train-VAT_loss 9.740027618408202
+test-NLL 1.028813010454178
+test-Acc 0.8031999969482422
+test-AT_loss 19.65988290786743
+test-VAT_loss 10.036565465927124
+Epoch: 45 CE_loss_train: 0.5357421388477087 elapsed_time: 73.23606371879578
+Epoch: 46 CE_loss_train: 0.5031702588498592 elapsed_time: 73.6894268989563
+Epoch: 47 CE_loss_train: 0.49687737718224523 elapsed_time: 73.2084014415741
+Epoch: 48 CE_loss_train: 0.5268813768774271 elapsed_time: 73.67562937736511
+Epoch: 49 CE_loss_train: 0.5170548210293054 elapsed_time: 73.19324159622192
+train-NLL 0.000371089709806256
+train-Acc 1.0
+train-AT_loss 6.79864013671875
+train-VAT_loss 5.724988174438477
+test-NLL 0.8357642501592636
+test-Acc 0.8257999968528748
+test-AT_loss 11.240076999664307
+test-VAT_loss 5.436022729873657
+Epoch: 50 CE_loss_train: 0.5127560484781861 elapsed_time: 73.71825909614563
+Epoch: 51 CE_loss_train: 0.49107639499008654 elapsed_time: 73.20775604248047
+Epoch: 52 CE_loss_train: 0.5174472902715206 elapsed_time: 73.59602093696594
+Epoch: 53 CE_loss_train: 0.5034329622983933 elapsed_time: 73.22567868232727
+Epoch: 54 CE_loss_train: 0.507363037802279 elapsed_time: 73.735919713974
+train-NLL 0.00036801657552132383
+train-Acc 1.0
+train-AT_loss 12.219749689102173
+train-VAT_loss 9.904161596298218
+test-NLL 0.8625333225727081
+test-Acc 0.8238000023365021
+test-AT_loss 18.226148986816405
+test-VAT_loss 10.497206993103028
+Epoch: 55 CE_loss_train: 0.48817401748150585 elapsed_time: 73.22734189033508
+Epoch: 56 CE_loss_train: 0.5062034694105386 elapsed_time: 73.68749642372131
+Epoch: 57 CE_loss_train: 0.5117620722949505 elapsed_time: 73.25512909889221
+Epoch: 58 CE_loss_train: 0.4677014447748661 elapsed_time: 73.57817053794861
+Epoch: 59 CE_loss_train: 0.512181035503745 elapsed_time: 73.18041968345642
+train-NLL 0.00025856833468424157
+train-Acc 1.0
+train-AT_loss 8.350862941741944
+train-VAT_loss 7.1327025413513185
+test-NLL 0.8424018317461014
+test-Acc 0.8307999920845032
+test-AT_loss 12.684785556793212
+test-VAT_loss 6.462218999862671
+Epoch: 60 CE_loss_train: 0.4830612787976861 elapsed_time: 73.72301197052002
+Epoch: 61 CE_loss_train: 0.4763892850279808 elapsed_time: 73.24327611923218
+Epoch: 62 CE_loss_train: 0.4806414100155234 elapsed_time: 73.70371007919312
+Epoch: 63 CE_loss_train: 0.469509864076972 elapsed_time: 73.13382291793823
+Epoch: 64 CE_loss_train: 0.4836377825587988 elapsed_time: 73.67123508453369
+train-NLL 0.0006301112854998792
+train-Acc 1.0
+train-AT_loss 12.259183349609375
+train-VAT_loss 8.640373182296752
+test-NLL 0.9761355125904083
+test-Acc 0.8185999977588654
+test-AT_loss 17.552946491241457
+test-VAT_loss 8.979892311096192
+Epoch: 65 CE_loss_train: 0.454816884547472 elapsed_time: 73.24537897109985
+Epoch: 66 CE_loss_train: 0.4828268878906965 elapsed_time: 73.72853374481201
+Epoch: 67 CE_loss_train: 0.44100924767553806 elapsed_time: 73.26192569732666
+Epoch: 68 CE_loss_train: 0.47497118279337885 elapsed_time: 73.73139977455139
+Epoch: 69 CE_loss_train: 0.4763196145370603 elapsed_time: 73.2374529838562
+train-NLL 0.00011093754106695997
+train-Acc 1.0
+train-AT_loss 5.650038185119629
+train-VAT_loss 4.376669836044312
+test-NLL 0.8464770442247391
+test-Acc 0.8273999989032745
+test-AT_loss 10.098700952529907
+test-VAT_loss 4.487588691711426
+Epoch: 70 CE_loss_train: 0.47853670991957187 elapsed_time: 73.76229214668274
+Epoch: 71 CE_loss_train: 0.47587989527732133 elapsed_time: 73.20950746536255
+Epoch: 72 CE_loss_train: 0.4632280911505222 elapsed_time: 73.6204080581665
+Epoch: 73 CE_loss_train: 0.45060880057513714 elapsed_time: 73.22392201423645
+Epoch: 74 CE_loss_train: 0.4538388212397695 elapsed_time: 73.62438607215881
+train-NLL 0.003124568079147139
+train-Acc 0.9992000007629395
+train-AT_loss 8.441282634735108
+train-VAT_loss 6.238924903869629
+test-NLL 1.099320718050003
+test-Acc 0.8157999968528747
+test-AT_loss 14.010281982421875
+test-VAT_loss 6.140715970993042
+Epoch: 75 CE_loss_train: 0.4601883216202259 elapsed_time: 73.25395154953003
+Epoch: 76 CE_loss_train: 0.45263465322554114 elapsed_time: 73.69628691673279
+Epoch: 77 CE_loss_train: 0.4550292428210378 elapsed_time: 73.28179788589478
+Epoch: 78 CE_loss_train: 0.48275688853114845 elapsed_time: 73.6710741519928
+Epoch: 79 CE_loss_train: 0.4498482032120228 elapsed_time: 73.25051164627075
+train-NLL 6.438753252950846e-05
+train-Acc 1.0
+train-AT_loss 5.7826627922058105
+train-VAT_loss 4.733052105903625
+test-NLL 0.871580855846405
+test-Acc 0.8339999961853027
+test-AT_loss 10.782758884429931
+test-VAT_loss 5.0385121774673465
+Epoch: 80 CE_loss_train: 0.4551967738568783 elapsed_time: 73.67814183235168
+Epoch: 81 CE_loss_train: 0.4701308320835233 elapsed_time: 73.25944948196411
+Epoch: 82 CE_loss_train: 0.46492987148463727 elapsed_time: 73.67197632789612
+Epoch: 83 CE_loss_train: 0.459628439322114 elapsed_time: 73.26029992103577
+Epoch: 84 CE_loss_train: 0.4415935419872403 elapsed_time: 73.78043985366821
+train-NLL 4.692620683272253e-05
+train-Acc 1.0
+train-AT_loss 5.913699626922607
+train-VAT_loss 5.343817014694213
+test-NLL 0.9125794523954391
+test-Acc 0.8267999958992004
+test-AT_loss 12.265584621429444
+test-VAT_loss 6.0558607339859005
+Epoch: 85 CE_loss_train: 0.43482790373265745 elapsed_time: 73.25896692276001
+Epoch: 86 CE_loss_train: 0.4607871928811073 elapsed_time: 73.60215473175049
+Epoch: 87 CE_loss_train: 0.4617708821222186 elapsed_time: 73.2376492023468
+Epoch: 88 CE_loss_train: 0.4333849101886153 elapsed_time: 73.6902871131897
+Epoch: 89 CE_loss_train: 0.43997645922005174 elapsed_time: 73.24045467376709
+train-NLL 0.0027271726823528296
+train-Acc 0.9998000001907349
+train-AT_loss 8.721824226379395
+train-VAT_loss 9.700830354690552
+test-NLL 0.9472525489330291
+test-Acc 0.8121999967098236
+test-AT_loss 15.737317161560059
+test-VAT_loss 9.32254482269287
+Epoch: 90 CE_loss_train: 0.4526415208354592 elapsed_time: 73.67536640167236
+Epoch: 91 CE_loss_train: 0.45066098691895606 elapsed_time: 73.21810746192932
+Epoch: 92 CE_loss_train: 0.44160999927669764 elapsed_time: 73.78931903839111
+Epoch: 93 CE_loss_train: 0.42324813617393375 elapsed_time: 73.27027654647827
+Epoch: 94 CE_loss_train: 0.43639305531978606 elapsed_time: 73.60512781143188
+train-NLL 0.07559967581066303
+train-Acc 0.9904000079631805
+train-AT_loss 156.56769607543944
+train-VAT_loss 67.69053596496582
+test-NLL 1.1670174384117127
+test-Acc 0.8109999990463257
+test-AT_loss 135.54459457397462
+test-VAT_loss 68.71886192321777
+Epoch: 95 CE_loss_train: 0.41351214177906515 elapsed_time: 73.25488781929016
+Epoch: 96 CE_loss_train: 0.41114423889666796 elapsed_time: 73.67741250991821
+Epoch: 97 CE_loss_train: 0.4323481970652938 elapsed_time: 73.27937412261963
+Epoch: 98 CE_loss_train: 0.46135739907622336 elapsed_time: 73.66153931617737
+Epoch: 99 CE_loss_train: 0.4342786808311939 elapsed_time: 73.23630833625793
+train-NLL 0.00010786925826323567
+train-Acc 1.0
+train-AT_loss 5.159381747245789
+train-VAT_loss 4.458226523399353
+test-NLL 0.7716200655698776
+test-Acc 0.8416000032424926
+test-AT_loss 10.13796817779541
+test-VAT_loss 4.637084279060364
+Epoch: 100 CE_loss_train: 0.40713199358433483 elapsed_time: 73.64446830749512
+Epoch: 101 CE_loss_train: 0.4128323715180159 elapsed_time: 73.24581742286682
+Epoch: 102 CE_loss_train: 0.4054345474392176 elapsed_time: 73.7134063243866
+Epoch: 103 CE_loss_train: 0.4458072171732783 elapsed_time: 73.23640537261963
+Epoch: 104 CE_loss_train: 0.4282100227475166 elapsed_time: 73.7553939819336
+train-NLL 3.839187646008213e-05
+train-Acc 1.0
+train-AT_loss 4.833591742515564
+train-VAT_loss 4.595108499526978
+test-NLL 0.9151361840963363
+test-Acc 0.8395999956130982
+test-AT_loss 10.73365982055664
+test-VAT_loss 5.194869647026062
+Epoch: 105 CE_loss_train: 0.41623491115868094 elapsed_time: 73.2711751461029
+Epoch: 106 CE_loss_train: 0.43808350518345834 elapsed_time: 73.75968170166016
+Epoch: 107 CE_loss_train: 0.4179388153925538 elapsed_time: 73.25583529472351
+Epoch: 108 CE_loss_train: 0.41509279910475017 elapsed_time: 73.66224646568298
+Epoch: 109 CE_loss_train: 0.4180040043592453 elapsed_time: 73.2331645488739
+train-NLL 0.009309191563806963
+train-Acc 0.9968000030517579
+train-AT_loss 9.572988090515137
+train-VAT_loss 7.014696984291077
+test-NLL 1.0551608848571776
+test-Acc 0.8237999951839448
+test-AT_loss 14.457728481292724
+test-VAT_loss 6.91583254814148
+Epoch: 110 CE_loss_train: 0.4301260891929269 elapsed_time: 73.72904944419861
+Epoch: 111 CE_loss_train: 0.43836296781897544 elapsed_time: 73.24788355827332
+Epoch: 112 CE_loss_train: 0.3991746029630303 elapsed_time: 73.59343910217285
+Epoch: 113 CE_loss_train: 0.41264378175139427 elapsed_time: 73.2648503780365
+Epoch: 114 CE_loss_train: 0.4136931145191193 elapsed_time: 73.62211966514587
+train-NLL 8.157437332556583e-05
+train-Acc 1.0
+train-AT_loss 4.513633561134339
+train-VAT_loss 4.728407602310181
+test-NLL 0.96732506275177
+test-Acc 0.8253999972343444
+test-AT_loss 11.676424865722657
+test-VAT_loss 5.440291585922242
+Epoch: 115 CE_loss_train: 0.4059736983850598 elapsed_time: 73.25545358657837
+Epoch: 116 CE_loss_train: 0.42187324170023205 elapsed_time: 73.6604266166687
+Epoch: 117 CE_loss_train: 0.39781824257224796 elapsed_time: 73.24322152137756
+Epoch: 118 CE_loss_train: 0.393135674521327 elapsed_time: 73.75126266479492
+Epoch: 119 CE_loss_train: 0.39979339368641376 elapsed_time: 73.23003649711609
+train-NLL 3.559841359674465e-05
+train-Acc 1.0
+train-AT_loss 7.130470027923584
+train-VAT_loss 5.754461045265198
+test-NLL 0.9822903698682786
+test-Acc 0.8395999956130982
+test-AT_loss 12.797357501983642
+test-VAT_loss 6.533741021156311
+Epoch: 120 CE_loss_train: 0.4251356642320752 elapsed_time: 73.69385242462158
+Epoch: 121 CE_loss_train: 0.41953724902123213 elapsed_time: 73.20926833152771
+Epoch: 122 CE_loss_train: 0.4027304981648922 elapsed_time: 73.73526120185852
+Epoch: 123 CE_loss_train: 0.41250599633902313 elapsed_time: 73.23539662361145
+Epoch: 124 CE_loss_train: 0.39599518600851297 elapsed_time: 73.7432930469513
+train-NLL 4.3152915395694436e-05
+train-Acc 1.0
+train-AT_loss 9.234749374389649
+train-VAT_loss 7.460136518478394
+test-NLL 0.909435128569603
+test-Acc 0.8355999994277954
+test-AT_loss 15.707846641540527
+test-VAT_loss 7.492473263740539
+Epoch: 125 CE_loss_train: 0.40420978827401993 elapsed_time: 73.21036839485168
+Epoch: 126 CE_loss_train: 0.4335180685669184 elapsed_time: 73.73126649856567
+Epoch: 127 CE_loss_train: 0.40685901157557963 elapsed_time: 73.22036027908325
+Epoch: 128 CE_loss_train: 0.3861629331856966 elapsed_time: 73.57529592514038
+Epoch: 129 CE_loss_train: 0.38078834567219016 elapsed_time: 73.22529697418213
+train-NLL 1.4817615888205182e-05
+train-Acc 1.0
+train-AT_loss 5.4685193538665775
+train-VAT_loss 4.851591634750366
+test-NLL 0.9206899827718735
+test-Acc 0.8410000002384186
+test-AT_loss 11.55283197402954
+test-VAT_loss 5.319841332435608
+Epoch: 130 CE_loss_train: 0.4062694526091218 elapsed_time: 73.72235321998596
+Epoch: 131 CE_loss_train: 0.4155007864534855 elapsed_time: 73.21943759918213
+Epoch: 132 CE_loss_train: 0.39303233414888383 elapsed_time: 73.76210427284241
+Epoch: 133 CE_loss_train: 0.3966985499113798 elapsed_time: 73.22332525253296
+Epoch: 134 CE_loss_train: 0.4212496582791209 elapsed_time: 73.80710172653198
+train-NLL 0.00019965685904026033
+train-Acc 1.0
+train-AT_loss 4.546876139640808
+train-VAT_loss 3.7591831517219543
+test-NLL 0.7392266255617141
+test-Acc 0.8391999971866607
+test-AT_loss 8.514672985076905
+test-VAT_loss 3.97440318107605
+Epoch: 135 CE_loss_train: 0.42194042954593897 elapsed_time: 73.22208094596863
+Epoch: 136 CE_loss_train: 0.4057084078341722 elapsed_time: 73.65569877624512
+Epoch: 137 CE_loss_train: 0.38462901845574377 elapsed_time: 73.24360275268555
+Epoch: 138 CE_loss_train: 0.3867743483558297 elapsed_time: 73.65148758888245
+Epoch: 139 CE_loss_train: 0.3780374082550406 elapsed_time: 73.22896146774292
+train-NLL 7.718061835475964e-05
+train-Acc 1.0
+train-AT_loss 14.553932590484619
+train-VAT_loss 12.988802175521851
+test-NLL 0.9735875117778778
+test-Acc 0.8395999979972839
+test-AT_loss 21.863457565307616
+test-VAT_loss 12.122758426666259
+Epoch: 140 CE_loss_train: 0.41107598289847375 elapsed_time: 73.65921425819397
+Epoch: 141 CE_loss_train: 0.39475259486585856 elapsed_time: 73.2373857498169
+Epoch: 142 CE_loss_train: 0.4004185115918517 elapsed_time: 73.63629198074341
+Epoch: 143 CE_loss_train: 0.3809358135983348 elapsed_time: 73.22449064254761
+Epoch: 144 CE_loss_train: 0.381855138912797 elapsed_time: 73.72728323936462
+train-NLL 4.359973582495513e-05
+train-Acc 1.0
+train-AT_loss 5.651783671379089
+train-VAT_loss 4.258129253387451
+test-NLL 0.9221925324201584
+test-Acc 0.8390000009536743
+test-AT_loss 11.269963159561158
+test-VAT_loss 5.615982961654663
+Epoch: 145 CE_loss_train: 0.37652372881770135 elapsed_time: 73.24049282073975
+Epoch: 146 CE_loss_train: 0.42216902248561383 elapsed_time: 73.5989294052124
+Epoch: 147 CE_loss_train: 0.3813068217411637 elapsed_time: 73.25272679328918
+Epoch: 148 CE_loss_train: 0.387579592205584 elapsed_time: 73.62387228012085
+Epoch: 149 CE_loss_train: 0.3847656177543104 elapsed_time: 73.21928024291992
+train-NLL 0.00024781757092569024
+train-Acc 1.0
+train-AT_loss 5.7638865041732785
+train-VAT_loss 5.191702551841736
+test-NLL 0.9529751688241959
+test-Acc 0.8343999969959259
+test-AT_loss 11.590776119232178
+test-VAT_loss 5.263913497924805
+Epoch: 150 CE_loss_train: 0.36867315728217365 elapsed_time: 73.73745489120483
+Epoch: 151 CE_loss_train: 0.378128844499588 elapsed_time: 73.24182629585266
+Epoch: 152 CE_loss_train: 0.39890368811786175 elapsed_time: 73.63973665237427
+Epoch: 153 CE_loss_train: 0.3759122410044074 elapsed_time: 73.19690132141113
+Epoch: 154 CE_loss_train: 0.3882467175275087 elapsed_time: 73.64442920684814
+train-NLL 6.0451681820268275e-05
+train-Acc 1.0
+train-AT_loss 4.35361168384552
+train-VAT_loss 4.311948504447937
+test-NLL 0.7958064419031143
+test-Acc 0.8415999984741211
+test-AT_loss 9.369316358566284
+test-VAT_loss 4.892416958808899
+Epoch: 155 CE_loss_train: 0.3741269285976887 elapsed_time: 73.66386914253235
+Epoch: 156 CE_loss_train: 0.3626649210602045 elapsed_time: 73.21427726745605
+Epoch: 157 CE_loss_train: 0.3812751918658614 elapsed_time: 73.22533464431763
+Epoch: 158 CE_loss_train: 0.3829154532030225 elapsed_time: 73.66643214225769
+Epoch: 159 CE_loss_train: 0.4202654958516359 elapsed_time: 73.23514771461487
+train-NLL 7.712045369771658e-05
+train-Acc 1.0
+train-AT_loss 3.866457405090332
+train-VAT_loss 3.007734761238098
+test-NLL 0.8126737803220749
+test-Acc 0.841599999666214
+test-AT_loss 8.287895441055298
+test-VAT_loss 3.823679442405701
+Epoch: 160 CE_loss_train: 0.37758278630673886 elapsed_time: 73.20832061767578
+Epoch: 161 CE_loss_train: 0.36804508257657287 elapsed_time: 73.69165992736816
+Epoch: 162 CE_loss_train: 0.3612655705958605 elapsed_time: 73.2550151348114
+Epoch: 163 CE_loss_train: 0.3801574124023318 elapsed_time: 73.2435519695282
+Epoch: 164 CE_loss_train: 0.3608117151260376 elapsed_time: 73.62700176239014
+train-NLL 1.0671555635326513e-05
+train-Acc 1.0
+train-AT_loss 4.266689949035644
+train-VAT_loss 3.540982129573822
+test-NLL 0.84558030128479
+test-Acc 0.8412000012397766
+test-AT_loss 9.420782108306884
+test-VAT_loss 4.352670912742615
+Epoch: 165 CE_loss_train: 0.37408766701817514 elapsed_time: 73.68176627159119
+Epoch: 166 CE_loss_train: 0.3634216482564807 elapsed_time: 73.24237513542175
+Epoch: 167 CE_loss_train: 0.37793044831603767 elapsed_time: 73.74650835990906
+Epoch: 168 CE_loss_train: 0.35206108570098876 elapsed_time: 73.22314500808716
+Epoch: 169 CE_loss_train: 0.3402004363015294 elapsed_time: 73.22175598144531
+train-NLL 7.35898658149381e-06
+train-Acc 1.0
+train-AT_loss 4.178691987991333
+train-VAT_loss 3.855730080604553
+test-NLL 0.9390353065729141
+test-Acc 0.850600004196167
+test-AT_loss 10.586865463256835
+test-VAT_loss 4.836320686340332
+Epoch: 170 CE_loss_train: 0.37787752732634544 elapsed_time: 73.24337410926819
+Epoch: 171 CE_loss_train: 0.37404014587402346 elapsed_time: 73.65332627296448
+Epoch: 172 CE_loss_train: 0.3856374605372548 elapsed_time: 73.22056341171265
+Epoch: 173 CE_loss_train: 0.35608136873692275 elapsed_time: 73.61018943786621
+Epoch: 174 CE_loss_train: 0.3488045086339116 elapsed_time: 73.21218609809875
+train-NLL 0.0026739485393932226
+train-Acc 0.9992000007629395
+train-AT_loss 5.2227785015106205
+train-VAT_loss 4.510885071754456
+test-NLL 0.9990478146076203
+test-Acc 0.8385999953746796
+test-AT_loss 12.421539821624755
+test-VAT_loss 5.92194917678833
+Epoch: 175 CE_loss_train: 0.35235550286248324 elapsed_time: 73.56532073020935
+Epoch: 176 CE_loss_train: 0.34985630866140127 elapsed_time: 73.26825046539307
+Epoch: 177 CE_loss_train: 0.35220830913633105 elapsed_time: 73.6586856842041
+Epoch: 178 CE_loss_train: 0.346438932903111 elapsed_time: 73.22502207756042
+Epoch: 179 CE_loss_train: 0.38627572286874057 elapsed_time: 73.71526956558228
+train-NLL 1.0845241076822276e-05
+train-Acc 1.0
+train-AT_loss 3.229831504821777
+train-VAT_loss 3.3874291038513182
+test-NLL 0.8924587655067444
+test-Acc 0.8473999977111817
+test-AT_loss 9.094894590377807
+test-VAT_loss 4.114736819267273
+Epoch: 180 CE_loss_train: 0.3625122499838471 elapsed_time: 73.20525622367859
+Epoch: 181 CE_loss_train: 0.373103197067976 elapsed_time: 73.7205593585968
+Epoch: 182 CE_loss_train: 0.3590595294907689 elapsed_time: 73.22206091880798
+Epoch: 183 CE_loss_train: 0.3505738442018628 elapsed_time: 73.6358072757721
+Epoch: 184 CE_loss_train: 0.33963646594434976 elapsed_time: 73.22510147094727
+train-NLL 8.795830970029783e-06
+train-Acc 1.0
+train-AT_loss 6.192583456039428
+train-VAT_loss 4.899400644302368
+test-NLL 0.8961253899335861
+test-Acc 0.852000002861023
+test-AT_loss 12.386573181152343
+test-VAT_loss 5.609552450180054
+Epoch: 185 CE_loss_train: 0.3544287119060755 elapsed_time: 73.68475532531738
+Epoch: 186 CE_loss_train: 0.3566204395145178 elapsed_time: 73.2504813671112
+Epoch: 187 CE_loss_train: 0.36058136880397795 elapsed_time: 73.63122487068176
+Epoch: 188 CE_loss_train: 0.3499329308979213 elapsed_time: 73.23231887817383
+Epoch: 189 CE_loss_train: 0.33385407011955975 elapsed_time: 73.64703130722046
+train-NLL 3.433205725059452e-05
+train-Acc 1.0
+train-AT_loss 3.887146234512329
+train-VAT_loss 3.7709428787231447
+test-NLL 0.8690933060646057
+test-Acc 0.854599996805191
+test-AT_loss 10.228792505264282
+test-VAT_loss 4.521624038219452
+Epoch: 190 CE_loss_train: 0.3576611450500786 elapsed_time: 73.2399115562439
+Epoch: 191 CE_loss_train: 0.33226012710481884 elapsed_time: 73.74972486495972
+Epoch: 192 CE_loss_train: 0.3401926678232849 elapsed_time: 73.2324481010437
+Epoch: 193 CE_loss_train: 0.35191499507054685 elapsed_time: 73.67714476585388
+Epoch: 194 CE_loss_train: 0.3479913924634457 elapsed_time: 73.25544452667236
+train-NLL 1.4564404832526634e-05
+train-Acc 1.0
+train-AT_loss 31.71491891860962
+train-VAT_loss 16.585502123832704
+test-NLL 0.8932847231626511
+test-Acc 0.8530000030994416
+test-AT_loss 31.172539291381835
+test-VAT_loss 16.751722440719604
+Epoch: 195 CE_loss_train: 0.3495705422572792 elapsed_time: 73.77586793899536
+Epoch: 196 CE_loss_train: 0.3785800361633301 elapsed_time: 73.23745441436768
+Epoch: 197 CE_loss_train: 0.37117032799869776 elapsed_time: 73.685546875
+Epoch: 198 CE_loss_train: 0.35828488767147065 elapsed_time: 73.25026226043701
+Epoch: 199 CE_loss_train: 0.3592156308144331 elapsed_time: 73.67898559570312
+train-NLL 0.00012261009380381437
+train-Acc 1.0
+train-AT_loss 5.146770515441895
+train-VAT_loss 5.784681677818298
+test-NLL 0.8390603840351105
+test-Acc 0.8450000011920928
+test-AT_loss 11.056619653701782
+test-VAT_loss 5.988861184120179
+Epoch: 200 CE_loss_train: 0.33962585087865593 elapsed_time: 73.22015023231506
+Epoch: 201 CE_loss_train: 0.350273172929883 elapsed_time: 73.7046947479248
+Epoch: 202 CE_loss_train: 0.3550434186682105 elapsed_time: 73.22934436798096
+Epoch: 203 CE_loss_train: 0.3835672638006508 elapsed_time: 73.60041308403015
+Epoch: 204 CE_loss_train: 0.3546228266134858 elapsed_time: 73.19378709793091
+train-NLL 1.3873557174974848e-05
+train-Acc 1.0
+train-AT_loss 8.81210011959076
+train-VAT_loss 5.141514558792114
+test-NLL 0.877223881483078
+test-Acc 0.8442000043392182
+test-AT_loss 12.747341260910034
+test-VAT_loss 5.6525023603439335
+Epoch: 205 CE_loss_train: 0.34280832823365925 elapsed_time: 73.65526723861694
+Epoch: 206 CE_loss_train: 0.32805984307080505 elapsed_time: 73.46167349815369
+Epoch: 207 CE_loss_train: 0.3566122857667506 elapsed_time: 73.88462662696838
+Epoch: 208 CE_loss_train: 0.3466251105442643 elapsed_time: 73.22867226600647
+Epoch: 209 CE_loss_train: 0.33983907509595157 elapsed_time: 73.70411419868469
+train-NLL 1.4412403702408483e-05
+train-Acc 1.0
+train-AT_loss 17.37846923828125
+train-VAT_loss 10.994306888580322
+test-NLL 0.9487789496779442
+test-Acc 0.8400000023841858
+test-AT_loss 22.412169017791747
+test-VAT_loss 11.93780758857727
+Epoch: 210 CE_loss_train: 0.3442491638660431 elapsed_time: 73.34454727172852
+Epoch: 211 CE_loss_train: 0.3416822422295809 elapsed_time: 73.73721933364868
+Epoch: 212 CE_loss_train: 0.3266701473854482 elapsed_time: 73.31055998802185
+Epoch: 213 CE_loss_train: 0.3432249155454338 elapsed_time: 73.7953987121582
+Epoch: 214 CE_loss_train: 0.34572451636195184 elapsed_time: 73.3074266910553
+train-NLL 3.7126969104974705e-05
+train-Acc 1.0
+train-AT_loss 6.924846968650818
+train-VAT_loss 5.536683268547058
+test-NLL 0.9066814768314362
+test-Acc 0.836800000667572
+test-AT_loss 11.802938823699952
+test-VAT_loss 5.7383319807052615
+Epoch: 215 CE_loss_train: 0.34775482609868047 elapsed_time: 73.72582221031189
+Epoch: 216 CE_loss_train: 0.334695241227746 elapsed_time: 73.28304123878479
+Epoch: 217 CE_loss_train: 0.3638944412022829 elapsed_time: 73.7675428390503
+Epoch: 218 CE_loss_train: 0.32654330041259527 elapsed_time: 73.30538606643677
+Epoch: 219 CE_loss_train: 0.3320097573287785 elapsed_time: 73.8254623413086
+train-NLL 7.197588788585563e-06
+train-Acc 1.0
+train-AT_loss 6.721931643486023
+train-VAT_loss 5.32430977344513
+test-NLL 0.8955365556478501
+test-Acc 0.8439999973773956
+test-AT_loss 12.849098224639892
+test-VAT_loss 5.632374820709228
+Epoch: 220 CE_loss_train: 0.3440943538583815 elapsed_time: 73.28535199165344
+Epoch: 221 CE_loss_train: 0.32690668780356646 elapsed_time: 73.73635601997375
+Epoch: 222 CE_loss_train: 0.3234223591536283 elapsed_time: 73.30842137336731
+Epoch: 223 CE_loss_train: 0.3137384417280555 elapsed_time: 73.78076004981995
+Epoch: 224 CE_loss_train: 0.3154562446847558 elapsed_time: 73.30924272537231
+train-NLL 4.145574910126015e-06
+train-Acc 1.0
+train-AT_loss 4.13133754491806
+train-VAT_loss 3.3328795862197875
+test-NLL 0.825611521601677
+test-Acc 0.8551999986171722
+test-AT_loss 9.91774673461914
+test-VAT_loss 4.375043025016785
+Epoch: 225 CE_loss_train: 0.3221173470467329 elapsed_time: 73.87814807891846
+Epoch: 226 CE_loss_train: 0.3373151557147503 elapsed_time: 73.37161827087402
+Epoch: 227 CE_loss_train: 0.34237513050436974 elapsed_time: 73.76461815834045
+Epoch: 228 CE_loss_train: 0.3223376385122538 elapsed_time: 73.31918120384216
+Epoch: 229 CE_loss_train: 0.32794702930375935 elapsed_time: 73.63927435874939
+train-NLL 1.4352754961919345e-05
+train-Acc 1.0
+train-AT_loss 8.379228167533874
+train-VAT_loss 7.4446500873565675
+test-NLL 0.9249347680807114
+test-Acc 0.840400002002716
+test-AT_loss 14.94111120223999
+test-VAT_loss 8.233506050109863
+Epoch: 230 CE_loss_train: 0.3263999030087143 elapsed_time: 73.32036805152893
+Epoch: 231 CE_loss_train: 0.3383517622202635 elapsed_time: 73.74193906784058
+Epoch: 232 CE_loss_train: 0.3455356714874506 elapsed_time: 73.34601068496704
+Epoch: 233 CE_loss_train: 0.35252210065722467 elapsed_time: 73.79638338088989
+Epoch: 234 CE_loss_train: 0.32539317352697256 elapsed_time: 73.30729341506958
+train-NLL 3.6066762197606296e-06
+train-Acc 1.0
+train-AT_loss 4.7471742963790895
+train-VAT_loss 3.7667611265182495
+test-NLL 0.8982079994678497
+test-Acc 0.8485999989509583
+test-AT_loss 10.671758661270141
+test-VAT_loss 4.785477614402771
+Epoch: 235 CE_loss_train: 0.33044003987684845 elapsed_time: 73.75742387771606
+Epoch: 236 CE_loss_train: 0.33642734615132214 elapsed_time: 73.3147988319397
+Epoch: 237 CE_loss_train: 0.31681792199611664 elapsed_time: 73.70090866088867
+Epoch: 238 CE_loss_train: 0.32943374771624806 elapsed_time: 73.29974174499512
+Epoch: 239 CE_loss_train: 0.31641731824725866 elapsed_time: 73.72448444366455
+train-NLL 5.1769972230886195e-06
+train-Acc 1.0
+train-AT_loss 23.78840087890625
+train-VAT_loss 14.443577604293823
+test-NLL 0.8599051237106323
+test-Acc 0.85299999833107
+test-AT_loss 28.43840045928955
+test-VAT_loss 14.667344102859497
+Epoch: 240 CE_loss_train: 0.3247565310448408 elapsed_time: 73.29848909378052
+Epoch: 241 CE_loss_train: 0.3501620971783996 elapsed_time: 73.73659825325012
+Epoch: 242 CE_loss_train: 0.32487043309956787 elapsed_time: 73.27819418907166
+Epoch: 243 CE_loss_train: 0.31572435203939675 elapsed_time: 73.62475323677063
+Epoch: 244 CE_loss_train: 0.3216733928769827 elapsed_time: 73.29825353622437
+train-NLL 1.1305666876069153e-05
+train-Acc 1.0
+train-AT_loss 4.330571990013123
+train-VAT_loss 3.564685173034668
+test-NLL 0.8640691608190536
+test-Acc 0.8499999964237213
+test-AT_loss 10.01730073928833
+test-VAT_loss 4.510460138320923
+Epoch: 245 CE_loss_train: 0.30497546257451175 elapsed_time: 73.71303415298462
+Epoch: 246 CE_loss_train: 0.33932359382510185 elapsed_time: 73.30266380310059
+Epoch: 247 CE_loss_train: 0.3294704755023122 elapsed_time: 73.79633259773254
+Epoch: 248 CE_loss_train: 0.31467992272228 elapsed_time: 73.35276579856873
+Epoch: 249 CE_loss_train: 0.3204820054396987 elapsed_time: 73.75763535499573
+train-NLL 4.5227420935134435e-06
+train-Acc 1.0
+train-AT_loss 4.011951377391815
+train-VAT_loss 3.630534303188324
+test-NLL 0.9300726020336151
+test-Acc 0.8448000001907349
+test-AT_loss 9.868431806564331
+test-VAT_loss 4.297183561325073
+Epoch: 250 CE_loss_train: 0.3148859157599509 elapsed_time: 73.3024468421936
+Epoch: 251 CE_loss_train: 0.33357800224795936 elapsed_time: 73.74189853668213
+Epoch: 252 CE_loss_train: 0.32753119330853225 elapsed_time: 73.32702374458313
+Epoch: 253 CE_loss_train: 0.3228364950791001 elapsed_time: 73.74482655525208
+Epoch: 254 CE_loss_train: 0.31514523601159455 elapsed_time: 73.35082983970642
+train-NLL 1.1142199823552801e-05
+train-Acc 1.0
+train-AT_loss 7.094458575248718
+train-VAT_loss 3.8431928873062136
+test-NLL 0.9120715749263764
+test-Acc 0.8382000029087067
+test-AT_loss 11.874982767105102
+test-VAT_loss 5.05291748046875
+Epoch: 255 CE_loss_train: 0.300836720187217 elapsed_time: 73.73538565635681
+Epoch: 256 CE_loss_train: 0.3219638430699706 elapsed_time: 73.22351479530334
+Epoch: 257 CE_loss_train: 0.30345606749877335 elapsed_time: 73.80803775787354
+Epoch: 258 CE_loss_train: 0.3172419161349535 elapsed_time: 73.29135727882385
+Epoch: 259 CE_loss_train: 0.30184834780171516 elapsed_time: 73.70345878601074
+train-NLL 8.113759322441184e-06
+train-Acc 1.0
+train-AT_loss 5.945782916545868
+train-VAT_loss 5.750574448108673
+test-NLL 0.8178425419330597
+test-Acc 0.8571999967098236
+test-AT_loss 12.752842092514038
+test-VAT_loss 6.7459503698349
+Epoch: 260 CE_loss_train: 0.3043180604465306 elapsed_time: 73.32051968574524
+Epoch: 261 CE_loss_train: 0.31166327066719535 elapsed_time: 73.78440642356873
+Epoch: 262 CE_loss_train: 0.32444076746702194 elapsed_time: 73.31038665771484
+Epoch: 263 CE_loss_train: 0.3202925426326692 elapsed_time: 73.75036716461182
+Epoch: 264 CE_loss_train: 0.3295357149280608 elapsed_time: 73.3259105682373
+train-NLL 0.0002915879098145524
+train-Acc 1.0
+train-AT_loss 33.89047128677368
+train-VAT_loss 16.8708074092865
+test-NLL 0.7206096196174622
+test-Acc 0.841599999666214
+test-AT_loss 27.020832805633546
+test-VAT_loss 13.542790060043336
+Epoch: 265 CE_loss_train: 0.31756912959739564 elapsed_time: 73.78916215896606
+Epoch: 266 CE_loss_train: 0.30874905267730357 elapsed_time: 73.29348397254944
+Epoch: 267 CE_loss_train: 0.30957358692772685 elapsed_time: 73.84809064865112
+Epoch: 268 CE_loss_train: 0.3049717172421515 elapsed_time: 73.36587333679199
+Epoch: 269 CE_loss_train: 0.320480930916965 elapsed_time: 73.74388146400452
+train-NLL 7.069928964483552e-05
+train-Acc 1.0
+train-AT_loss 3.5978460788726805
+train-VAT_loss 3.264035751819611
+test-NLL 0.8340245372056961
+test-Acc 0.8475999999046325
+test-AT_loss 9.158961181640626
+test-VAT_loss 4.314783182144165
+Epoch: 270 CE_loss_train: 0.29939965806901453 elapsed_time: 73.26035189628601
+Epoch: 271 CE_loss_train: 0.30266803603619336 elapsed_time: 73.72339487075806
+Epoch: 272 CE_loss_train: 0.2933951433189213 elapsed_time: 73.3082594871521
+Epoch: 273 CE_loss_train: 0.2960839067026973 elapsed_time: 73.74955606460571
+Epoch: 274 CE_loss_train: 0.3062337198667228 elapsed_time: 73.2913601398468
+train-NLL 0.00010552876292877045
+train-Acc 1.0
+train-AT_loss 17.904123344421386
+train-VAT_loss 12.24128279685974
+test-NLL 0.8139938962459564
+test-Acc 0.8410000026226043
+test-AT_loss 20.363390216827394
+test-VAT_loss 12.493714475631714
+Epoch: 275 CE_loss_train: 0.30790982382372023 elapsed_time: 73.90230989456177
+Epoch: 276 CE_loss_train: 0.30069583378732206 elapsed_time: 73.32354283332825
+Epoch: 277 CE_loss_train: 0.2967098853178322 elapsed_time: 73.80431628227234
+Epoch: 278 CE_loss_train: 0.29548108132556083 elapsed_time: 73.30436134338379
+Epoch: 279 CE_loss_train: 0.3010331002250314 elapsed_time: 73.78459763526917
+train-NLL 3.7735420198714563e-06
+train-Acc 1.0
+train-AT_loss 2.758111248016357
+train-VAT_loss 2.4045942044258117
+test-NLL 0.8275588512420654
+test-Acc 0.8603999972343445
+test-AT_loss 8.754760932922363
+test-VAT_loss 3.750432085990906
+Epoch: 280 CE_loss_train: 0.3176667549274862 elapsed_time: 73.33324241638184
+Epoch: 281 CE_loss_train: 0.2926702838204801 elapsed_time: 73.79783916473389
+Epoch: 282 CE_loss_train: 0.2980705026164651 elapsed_time: 73.35185527801514
+Epoch: 283 CE_loss_train: 0.337972381785512 elapsed_time: 73.7360188961029
+Epoch: 284 CE_loss_train: 0.2989724200032651 elapsed_time: 73.33690142631531
+train-NLL 1.854608219957754e-05
+train-Acc 1.0
+train-AT_loss 4.9370251607894895
+train-VAT_loss 4.247423133850098
+test-NLL 0.894893507361412
+test-Acc 0.8441999971866607
+test-AT_loss 11.704548826217652
+test-VAT_loss 5.738677911758423
+Epoch: 285 CE_loss_train: 0.3025348449870944 elapsed_time: 73.73941159248352
+Epoch: 286 CE_loss_train: 0.3078369037248194 elapsed_time: 73.27593040466309
+Epoch: 287 CE_loss_train: 0.28514833593741057 elapsed_time: 73.78288173675537
+Epoch: 288 CE_loss_train: 0.2821477916836739 elapsed_time: 73.29440522193909
+Epoch: 289 CE_loss_train: 0.2816425098851323 elapsed_time: 73.70358324050903
+train-NLL 3.5761417325375078e-06
+train-Acc 1.0
+train-AT_loss 4.629215369224548
+train-VAT_loss 3.5586808490753175
+test-NLL 0.9564898991584778
+test-Acc 0.8427999997138977
+test-AT_loss 11.188554544448852
+test-VAT_loss 5.016384210586548
+Epoch: 290 CE_loss_train: 0.2881866269931197 elapsed_time: 73.27443099021912
+Epoch: 291 CE_loss_train: 0.301526711601764 elapsed_time: 73.77063512802124
+Epoch: 292 CE_loss_train: 0.3042768088169396 elapsed_time: 73.3171899318695
+Epoch: 293 CE_loss_train: 0.3066645709425211 elapsed_time: 73.72727346420288
+Epoch: 294 CE_loss_train: 0.29430367751047015 elapsed_time: 73.29482746124268
+train-NLL 1.2249282281118213e-05
+train-Acc 1.0
+train-AT_loss 11.750740947723388
+train-VAT_loss 6.42541494846344
+test-NLL 0.8539228612184524
+test-Acc 0.8520000004768371
+test-AT_loss 15.45539098739624
+test-VAT_loss 7.17953537940979
+Epoch: 295 CE_loss_train: 0.29786497451364996 elapsed_time: 73.6991183757782
+Epoch: 296 CE_loss_train: 0.28361019464209675 elapsed_time: 73.26784181594849
+Epoch: 297 CE_loss_train: 0.3124667039513588 elapsed_time: 73.79533362388611
+Epoch: 298 CE_loss_train: 0.3015791634656489 elapsed_time: 73.3394627571106
+Epoch: 299 CE_loss_train: 0.3080789149925113 elapsed_time: 73.75138521194458
+train-NLL 5.534383954000077e-06
+train-Acc 1.0
+train-AT_loss 2.720351848602295
+train-VAT_loss 2.9139991545677186
+test-NLL 0.8585550409555435
+test-Acc 0.8472000014781952
+test-AT_loss 8.811095380783081
+test-VAT_loss 4.34395842552185
+Epoch: 300 CE_loss_train: 0.29961905783042314 elapsed_time: 73.31734800338745
+Epoch: 301 CE_loss_train: 0.3010328420624137 elapsed_time: 73.64320135116577
+Epoch: 302 CE_loss_train: 0.2915083337575197 elapsed_time: 73.28261375427246
+Epoch: 303 CE_loss_train: 0.286602991707623 elapsed_time: 73.72524118423462
+Epoch: 304 CE_loss_train: 0.2972358030080795 elapsed_time: 73.243488073349
+train-NLL 9.996159408274252e-06
+train-Acc 1.0
+train-AT_loss 3.284470715522766
+train-VAT_loss 3.1236424088478087
+test-NLL 0.9487336885929107
+test-Acc 0.8417999994754791
+test-AT_loss 9.747039289474488
+test-VAT_loss 4.494186487197876
+Epoch: 305 CE_loss_train: 0.28442651534453034 elapsed_time: 73.7205138206482
+Epoch: 306 CE_loss_train: 0.3048852138034999 elapsed_time: 73.29076838493347
+Epoch: 307 CE_loss_train: 0.28927754163742064 elapsed_time: 73.71480226516724
+Epoch: 308 CE_loss_train: 0.28456260211765766 elapsed_time: 73.30945563316345
+Epoch: 309 CE_loss_train: 0.2820924621075392 elapsed_time: 73.73890089988708
+train-NLL 6.814023888637166e-06
+train-Acc 1.0
+train-AT_loss 2.700372910499573
+train-VAT_loss 2.9347163891792296
+test-NLL 0.8591853636503219
+test-Acc 0.8483999991416931
+test-AT_loss 8.792347822189331
+test-VAT_loss 3.6775574111938476
+Epoch: 310 CE_loss_train: 0.2804707796126604 elapsed_time: 73.2885811328888
+Epoch: 311 CE_loss_train: 0.30820998264476657 elapsed_time: 73.77241706848145
+Epoch: 312 CE_loss_train: 0.28556302377954124 elapsed_time: 73.3180284500122
+Epoch: 313 CE_loss_train: 0.2977880300208926 elapsed_time: 73.73580694198608
+Epoch: 314 CE_loss_train: 0.2931054488196969 elapsed_time: 73.33309364318848
+train-NLL 1.136711433673554e-05
+train-Acc 1.0
+train-AT_loss 3.6241525316238405
+train-VAT_loss 2.6240173459053038
+test-NLL 0.8885577118396759
+test-Acc 0.8503999984264374
+test-AT_loss 9.229789266586303
+test-VAT_loss 3.9273053932189943
+Epoch: 315 CE_loss_train: 0.3064723900705576 elapsed_time: 73.31371259689331
+Epoch: 316 CE_loss_train: 0.2740712114796042 elapsed_time: 73.74509406089783
+Epoch: 317 CE_loss_train: 0.27986838802695274 elapsed_time: 73.32332301139832
+Epoch: 318 CE_loss_train: 0.283836122918874 elapsed_time: 73.3037576675415
+Epoch: 319 CE_loss_train: 0.26929823253303764 elapsed_time: 73.86404061317444
+train-NLL 3.151647104573385e-06
+train-Acc 1.0
+train-AT_loss 6.5041517162322995
+train-VAT_loss 4.121041259765625
+test-NLL 0.9738411492109299
+test-Acc 0.845
+test-AT_loss 11.789412441253662
+test-VAT_loss 5.096151475906372
+Epoch: 320 CE_loss_train: 0.28604949862696233 elapsed_time: 73.64002060890198
+Epoch: 321 CE_loss_train: 0.2843267407640815 elapsed_time: 73.24931812286377
+Epoch: 322 CE_loss_train: 0.2925309532880783 elapsed_time: 73.75168561935425
+Epoch: 323 CE_loss_train: 0.2722170519083738 elapsed_time: 73.24425840377808
+Epoch: 324 CE_loss_train: 0.28662406470626595 elapsed_time: 73.25334787368774
+train-NLL 3.288849800810567e-05
+train-Acc 1.0
+train-AT_loss 2.3084383368492127
+train-VAT_loss 1.71230651140213
+test-NLL 0.7342437654733658
+test-Acc 0.8506000018119813
+test-AT_loss 7.026137447357177
+test-VAT_loss 2.944439673423767
+Epoch: 325 CE_loss_train: 0.2609361850470304 elapsed_time: 73.26616477966309
+Epoch: 326 CE_loss_train: 0.2891214953549206 elapsed_time: 73.65556287765503
+Epoch: 327 CE_loss_train: 0.281868046335876 elapsed_time: 73.24711108207703
+Epoch: 328 CE_loss_train: 0.2786845210939646 elapsed_time: 73.67995953559875
+Epoch: 329 CE_loss_train: 0.2708798400498927 elapsed_time: 73.26533198356628
+train-NLL 4.890833561148611e-06
+train-Acc 1.0
+train-AT_loss 4.112023525238037
+train-VAT_loss 3.309715564250946
+test-NLL 0.8424352085590363
+test-Acc 0.8456000018119813
+test-AT_loss 9.475527725219727
+test-VAT_loss 4.053902544975281
+Epoch: 330 CE_loss_train: 0.2684038631618023 elapsed_time: 73.64148354530334
+Epoch: 331 CE_loss_train: 0.2877844356559217 elapsed_time: 73.27427363395691
+Epoch: 332 CE_loss_train: 0.2635786993056536 elapsed_time: 73.6619770526886
+Epoch: 333 CE_loss_train: 0.2729416935518384 elapsed_time: 73.25999355316162
+Epoch: 334 CE_loss_train: 0.28854063330218194 elapsed_time: 73.71428990364075
+train-NLL 0.0006881719362900185
+train-Acc 1.0
+train-AT_loss 5.1959526205062865
+train-VAT_loss 5.974986433982849
+test-NLL 0.8720888435840607
+test-Acc 0.8338000011444092
+test-AT_loss 12.169843645095826
+test-VAT_loss 7.033486566543579
+Epoch: 335 CE_loss_train: 0.2899994412250817 elapsed_time: 73.28072476387024
+Epoch: 336 CE_loss_train: 0.2803355537727475 elapsed_time: 73.75970411300659
+Epoch: 337 CE_loss_train: 0.27816054731607437 elapsed_time: 73.3316125869751
+Epoch: 338 CE_loss_train: 0.2585522481054068 elapsed_time: 73.705890417099
+Epoch: 339 CE_loss_train: 0.2659731459897012 elapsed_time: 73.28919458389282
+train-NLL 6.713961281548108e-06
+train-Acc 1.0
+train-AT_loss 6.337204561233521
+train-VAT_loss 4.791854574680328
+test-NLL 0.9233743757009506
+test-Acc 0.8415999948978424
+test-AT_loss 12.637376499176025
+test-VAT_loss 6.660319075584412
+Epoch: 340 CE_loss_train: 0.26772328129038214 elapsed_time: 73.69350099563599
+Epoch: 341 CE_loss_train: 0.2769784069992602 elapsed_time: 73.33828496932983
+Epoch: 342 CE_loss_train: 0.26973331278190016 elapsed_time: 73.74936318397522
+Epoch: 343 CE_loss_train: 0.26265089886263016 elapsed_time: 73.27155900001526
+Epoch: 344 CE_loss_train: 0.2804861620254815 elapsed_time: 73.78339719772339
+train-NLL 9.499625983835358e-06
+train-Acc 1.0
+train-AT_loss 6.067100405693054
+train-VAT_loss 3.8538235306739805
+test-NLL 0.9251484322547913
+test-Acc 0.840000001192093
+test-AT_loss 10.528224306106567
+test-VAT_loss 4.8670344114303585
+Epoch: 345 CE_loss_train: 0.26268841000273824 elapsed_time: 73.29366111755371
+Epoch: 346 CE_loss_train: 0.2713071899302304 elapsed_time: 73.7851071357727
+Epoch: 347 CE_loss_train: 0.2800835775397718 elapsed_time: 73.29528379440308
+Epoch: 348 CE_loss_train: 0.28342765133827924 elapsed_time: 73.73837161064148
+Epoch: 349 CE_loss_train: 0.27282597141340376 elapsed_time: 73.29749584197998
+train-NLL 1.334464647356981e-05
+train-Acc 1.0
+train-AT_loss 2.983537495136261
+train-VAT_loss 3.080971829891205
+test-NLL 0.9051931738853455
+test-Acc 0.8475999999046325
+test-AT_loss 9.497803421020508
+test-VAT_loss 4.275256290435791
+Epoch: 350 CE_loss_train: 0.27121587254107 elapsed_time: 73.70667910575867
+Epoch: 351 CE_loss_train: 0.26689067160710694 elapsed_time: 73.30122399330139
+Epoch: 352 CE_loss_train: 0.25803109604865315 elapsed_time: 73.71560645103455
+Epoch: 353 CE_loss_train: 0.27301629532128574 elapsed_time: 73.31365823745728
+Epoch: 354 CE_loss_train: 0.2723570705763996 elapsed_time: 73.79738759994507
+train-NLL 2.8330847152346906e-06
+train-Acc 1.0
+train-AT_loss 3.024637610912323
+train-VAT_loss 3.303134067058563
+test-NLL 0.9174865865707398
+test-Acc 0.847999997138977
+test-AT_loss 9.365425338745117
+test-VAT_loss 4.157887754440307
+Epoch: 355 CE_loss_train: 0.2693513893708587 elapsed_time: 73.27746891975403
+Epoch: 356 CE_loss_train: 0.25804284228011964 elapsed_time: 73.69810795783997
+Epoch: 357 CE_loss_train: 0.2612479281798005 elapsed_time: 73.28366041183472
+Epoch: 358 CE_loss_train: 0.2751119722612202 elapsed_time: 73.72786545753479
+Epoch: 359 CE_loss_train: 0.2808312217704952 elapsed_time: 73.31453967094421
+train-NLL 2.591256157074895e-05
+train-Acc 1.0
+train-AT_loss 3.5949367332458495
+train-VAT_loss 3.154461188316345
+test-NLL 0.9888071882724762
+test-Acc 0.8455999982357025
+test-AT_loss 10.078991594314575
+test-VAT_loss 4.711021099090576
+Epoch: 360 CE_loss_train: 0.2686307333037257 elapsed_time: 73.74024295806885
+Epoch: 361 CE_loss_train: 0.25881750641390683 elapsed_time: 73.31028151512146
+Epoch: 362 CE_loss_train: 0.26293482109904287 elapsed_time: 73.73803949356079
+Epoch: 363 CE_loss_train: 0.2796997679397464 elapsed_time: 73.2915153503418
+Epoch: 364 CE_loss_train: 0.25629706305451694 elapsed_time: 73.72279620170593
+train-NLL 1.0231024799622902e-06
+train-Acc 1.0
+train-AT_loss 1.9238201892375946
+train-VAT_loss 2.1133968806266785
+test-NLL 0.9482205605506897
+test-Acc 0.8437999987602234
+test-AT_loss 8.584257707595825
+test-VAT_loss 3.6793359899520874
+Epoch: 365 CE_loss_train: 0.27174448719248173 elapsed_time: 73.28419756889343
+Epoch: 366 CE_loss_train: 0.2758032918162644 elapsed_time: 73.75661587715149
+Epoch: 367 CE_loss_train: 0.2521946728788316 elapsed_time: 73.35915660858154
+Epoch: 368 CE_loss_train: 0.26522715857252477 elapsed_time: 73.79472398757935
+Epoch: 369 CE_loss_train: 0.2764835638925433 elapsed_time: 73.33067774772644
+train-NLL 5.812602630612673e-06
+train-Acc 1.0
+train-AT_loss 2.416715339422226
+train-VAT_loss 2.0848601126670836
+test-NLL 0.8181805783510208
+test-Acc 0.855
+test-AT_loss 7.938946743011474
+test-VAT_loss 3.4742246150970457
+Epoch: 370 CE_loss_train: 0.2636433176510036 elapsed_time: 73.84268999099731
+Epoch: 371 CE_loss_train: 0.27576821494847537 elapsed_time: 73.3433027267456
+Epoch: 372 CE_loss_train: 0.28513751724734904 elapsed_time: 73.75943732261658
+Epoch: 373 CE_loss_train: 0.2589879571087658 elapsed_time: 73.31424236297607
+Epoch: 374 CE_loss_train: 0.2821273591183126 elapsed_time: 73.79185819625854
+train-NLL 7.741760782664642e-05
+train-Acc 1.0
+train-AT_loss 1.8927956891059876
+train-VAT_loss 1.9901376903057098
+test-NLL 0.7782545351982116
+test-Acc 0.8423999977111817
+test-AT_loss 7.095258913040161
+test-VAT_loss 3.00550808429718
+Epoch: 375 CE_loss_train: 0.2555729271285236 elapsed_time: 73.31547284126282
+Epoch: 376 CE_loss_train: 0.2781337204389274 elapsed_time: 73.81129217147827
+Epoch: 377 CE_loss_train: 0.26892841670662165 elapsed_time: 73.30366516113281
+Epoch: 378 CE_loss_train: 0.251371054854244 elapsed_time: 73.69138622283936
+Epoch: 379 CE_loss_train: 0.24653615226969122 elapsed_time: 73.30556035041809
+train-NLL 7.630940910985374e-07
+train-Acc 1.0
+train-AT_loss 1.9214469575881958
+train-VAT_loss 2.2438928437232972
+test-NLL 0.8855313163995743
+test-Acc 0.853400000333786
+test-AT_loss 9.210316677093505
+test-VAT_loss 4.051951680183411
+Epoch: 380 CE_loss_train: 0.24017371342517435 elapsed_time: 73.72612261772156
+Epoch: 381 CE_loss_train: 0.24672597847878933 elapsed_time: 73.27091383934021
+Epoch: 382 CE_loss_train: 0.25663011556491255 elapsed_time: 73.6778552532196
+Epoch: 383 CE_loss_train: 0.2627687078155577 elapsed_time: 73.32009935379028
+Epoch: 384 CE_loss_train: 0.2602318904362619 elapsed_time: 73.73811960220337
+train-NLL 1.0259653683419856e-05
+train-Acc 1.0
+train-AT_loss 3.622344493865967
+train-VAT_loss 3.2956530594825746
+test-NLL 0.9883245730400085
+test-Acc 0.8413999962806702
+test-AT_loss 10.011041851043702
+test-VAT_loss 4.277547268867493
+Epoch: 385 CE_loss_train: 0.25825144509784875 elapsed_time: 73.27918124198914
+Epoch: 386 CE_loss_train: 0.25361310118809344 elapsed_time: 73.71792650222778
+Epoch: 387 CE_loss_train: 0.276286759711802 elapsed_time: 73.32529282569885
+Epoch: 388 CE_loss_train: 0.255519837345928 elapsed_time: 73.76729607582092
+Epoch: 389 CE_loss_train: 0.2425089921616018 elapsed_time: 73.2821753025055
+train-NLL 3.818981148810963e-06
+train-Acc 1.0
+train-AT_loss 3.669640749692917
+train-VAT_loss 3.987466907501221
+test-NLL 0.9850761860609054
+test-Acc 0.8455999970436097
+test-AT_loss 11.001527853012085
+test-VAT_loss 5.66586624622345
+Epoch: 390 CE_loss_train: 0.24203857421875 elapsed_time: 73.72694730758667
+Epoch: 391 CE_loss_train: 0.25988521382212637 elapsed_time: 73.32171058654785
+Epoch: 392 CE_loss_train: 0.25428514847531913 elapsed_time: 73.70238447189331
+Epoch: 393 CE_loss_train: 0.28462095428258183 elapsed_time: 73.28642654418945
+Epoch: 394 CE_loss_train: 0.26560686210170387 elapsed_time: 73.7169919013977
+train-NLL 1.0895812827129704e-05
+train-Acc 1.0
+train-AT_loss 1.50498064160347
+train-VAT_loss 1.6037595629692079
+test-NLL 0.7806334555149078
+test-Acc 0.8544000005722046
+test-AT_loss 7.287021827697754
+test-VAT_loss 3.0667054796218873
+Epoch: 395 CE_loss_train: 0.2521181970648467 elapsed_time: 73.27554655075073
+Epoch: 396 CE_loss_train: 0.2522151075210422 elapsed_time: 73.72347068786621
+Epoch: 397 CE_loss_train: 0.26814911371096967 elapsed_time: 73.3144588470459
+Epoch: 398 CE_loss_train: 0.26334380431100723 elapsed_time: 73.63383960723877
+Epoch: 399 CE_loss_train: 0.24935312051326036 elapsed_time: 73.28962421417236
+train-NLL 3.948649222138556e-06
+train-Acc 1.0
+train-AT_loss 2.388272716999054
+train-VAT_loss 2.047282485961914
+test-NLL 0.884469006061554
+test-Acc 0.8461999988555908
+test-AT_loss 8.684702377319336
+test-VAT_loss 3.5757742071151735
+Epoch: 400 CE_loss_train: 0.24476466597989202 elapsed_time: 73.72937893867493
+Epoch: 401 CE_loss_train: 0.2563240627199411 elapsed_time: 73.28200912475586
+Epoch: 402 CE_loss_train: 0.25876322723925116 elapsed_time: 73.79602909088135
+Epoch: 403 CE_loss_train: 0.24143643312156202 elapsed_time: 73.30056619644165
+Epoch: 404 CE_loss_train: 0.23885540663264693 elapsed_time: 73.79204273223877
+train-NLL 1.7043698372276595e-06
+train-Acc 1.0
+train-AT_loss 2.940900213718414
+train-VAT_loss 2.4462641358375548
+test-NLL 0.9537338924407959
+test-Acc 0.846199996471405
+test-AT_loss 9.649947175979614
+test-VAT_loss 3.878847236633301
+Epoch: 405 CE_loss_train: 0.2640475020185113 elapsed_time: 73.29448795318604
+Epoch: 406 CE_loss_train: 0.25766209669411183 elapsed_time: 73.65664529800415
+Epoch: 407 CE_loss_train: 0.2476015181839466 elapsed_time: 73.32750725746155
+Epoch: 408 CE_loss_train: 0.25442872578278186 elapsed_time: 73.67313933372498
+Epoch: 409 CE_loss_train: 0.25979395464062693 elapsed_time: 73.27959561347961
+train-NLL 8.02115563260486e-06
+train-Acc 1.0
+train-AT_loss 3.8394570994377135
+train-VAT_loss 2.714143147468567
+test-NLL 0.9539922529459
+test-Acc 0.8441999995708466
+test-AT_loss 9.977756395339966
+test-VAT_loss 4.05323970079422
+Epoch: 410 CE_loss_train: 0.24558365682139993 elapsed_time: 73.6741292476654
+Epoch: 411 CE_loss_train: 0.2406089441664517 elapsed_time: 73.27807903289795
+Epoch: 412 CE_loss_train: 0.2563316288217902 elapsed_time: 73.71412467956543
+Epoch: 413 CE_loss_train: 0.26148758359253405 elapsed_time: 73.30542945861816
+Epoch: 414 CE_loss_train: 0.24860712468624116 elapsed_time: 73.78439855575562
+train-NLL 1.725891430055526e-06
+train-Acc 1.0
+train-AT_loss 4.565890059471131
+train-VAT_loss 3.683566882610321
+test-NLL 0.9264084100723267
+test-Acc 0.8539999961853028
+test-AT_loss 11.233884944915772
+test-VAT_loss 4.869892597198486
+Epoch: 415 CE_loss_train: 0.24450823932886123 elapsed_time: 73.2591061592102
+Epoch: 416 CE_loss_train: 0.2524808015488088 elapsed_time: 73.71542930603027
+Epoch: 417 CE_loss_train: 0.2546498233731836 elapsed_time: 73.2866063117981
+Epoch: 418 CE_loss_train: 0.24077954601496457 elapsed_time: 73.7298035621643
+Epoch: 419 CE_loss_train: 0.23821879541501403 elapsed_time: 73.30968165397644
+train-NLL 9.131647686899669e-07
+train-Acc 1.0
+train-AT_loss 1.865957567691803
+train-VAT_loss 2.230564181804657
+test-NLL 0.9634094995260238
+test-Acc 0.8537999939918518
+test-AT_loss 9.337443981170654
+test-VAT_loss 3.982693338394165
+Epoch: 420 CE_loss_train: 0.23796488931402565 elapsed_time: 73.76236367225647
+Epoch: 421 CE_loss_train: 0.23775703937746584 elapsed_time: 73.28940892219543
+Epoch: 422 CE_loss_train: 0.26541001606732606 elapsed_time: 73.72438979148865
+Epoch: 423 CE_loss_train: 0.24665162498131393 elapsed_time: 73.28541564941406
+Epoch: 424 CE_loss_train: 0.24471866495907307 elapsed_time: 73.6927559375763
+train-NLL 2.50098725814496e-06
+train-Acc 1.0
+train-AT_loss 8.24276569366455
+train-VAT_loss 3.883226662874222
+test-NLL 0.8479748046398163
+test-Acc 0.8455999982357025
+test-AT_loss 12.652254962921143
+test-VAT_loss 5.336743674278259
+Epoch: 425 CE_loss_train: 0.23371188919991254 elapsed_time: 73.25443720817566
+Epoch: 426 CE_loss_train: 0.2340889315120876 elapsed_time: 73.73453092575073
+Epoch: 427 CE_loss_train: 0.24862618090584873 elapsed_time: 73.27715420722961
+Epoch: 428 CE_loss_train: 0.2348320411518216 elapsed_time: 73.82285737991333
+Epoch: 429 CE_loss_train: 0.23370745964348316 elapsed_time: 73.26748180389404
+train-NLL 2.200747444476292e-06
+train-Acc 1.0
+train-AT_loss 1.7460418367385864
+train-VAT_loss 1.9957270967960357
+test-NLL 0.857895205616951
+test-Acc 0.8525999999046325
+test-AT_loss 7.947613744735718
+test-VAT_loss 3.5491603899002073
+Epoch: 430 CE_loss_train: 0.2214720904454589 elapsed_time: 73.8014600276947
+Epoch: 431 CE_loss_train: 0.23576346702873707 elapsed_time: 73.28438353538513
+Epoch: 432 CE_loss_train: 0.23868511069566012 elapsed_time: 73.72531771659851
+Epoch: 433 CE_loss_train: 0.25054566958919167 elapsed_time: 73.2791633605957
+Epoch: 434 CE_loss_train: 0.22089568322524428 elapsed_time: 73.78190898895264
+train-NLL 2.770243871452749e-05
+train-Acc 1.0
+train-AT_loss 5.6530971479415895
+train-VAT_loss 3.509634590148926
+test-NLL 0.9438474190235138
+test-Acc 0.8539999997615815
+test-AT_loss 12.4773260307312
+test-VAT_loss 5.311561665534973
+Epoch: 435 CE_loss_train: 0.24820636734366416 elapsed_time: 73.25547766685486
+Epoch: 436 CE_loss_train: 0.2205459709279239 elapsed_time: 73.80948090553284
+Epoch: 437 CE_loss_train: 0.23040108187124134 elapsed_time: 73.29158353805542
+Epoch: 438 CE_loss_train: 0.23349115116521715 elapsed_time: 73.75181436538696
+Epoch: 439 CE_loss_train: 0.23047237181104718 elapsed_time: 73.25182271003723
+train-NLL 1.8384619500011468e-06
+train-Acc 1.0
+train-AT_loss 7.183494486808777
+train-VAT_loss 4.917199523448944
+test-NLL 0.9718713557720184
+test-Acc 0.8431999981403351
+test-AT_loss 13.231850509643555
+test-VAT_loss 5.567027354240418
+Epoch: 440 CE_loss_train: 0.24825217682868242 elapsed_time: 73.80502271652222
+Epoch: 441 CE_loss_train: 0.2584015474282205 elapsed_time: 73.29783177375793
+Epoch: 442 CE_loss_train: 0.23880727928131817 elapsed_time: 73.7110664844513
+Epoch: 443 CE_loss_train: 0.23295456503517925 elapsed_time: 73.24922800064087
+Epoch: 444 CE_loss_train: 0.246277004648 elapsed_time: 73.85549783706665
+train-NLL 1.5299380896749427e-06
+train-Acc 1.0
+train-AT_loss 5.603186092376709
+train-VAT_loss 5.686915354728699
+test-NLL 0.9372103571891784
+test-Acc 0.8493999993801117
+test-AT_loss 14.535437936782836
+test-VAT_loss 7.7455551719665525
+Epoch: 445 CE_loss_train: 0.24211159664206205 elapsed_time: 73.4037709236145
+Epoch: 446 CE_loss_train: 0.26049082266166806 elapsed_time: 73.92824721336365
+Epoch: 447 CE_loss_train: 0.23527860317379237 elapsed_time: 73.32071232795715
+Epoch: 448 CE_loss_train: 0.22954912185668946 elapsed_time: 73.74067330360413
+Epoch: 449 CE_loss_train: 0.24786259612068534 elapsed_time: 73.27394104003906
+train-NLL 5.834492327494445e-06
+train-Acc 1.0
+train-AT_loss 2.3368944239616396
+train-VAT_loss 2.286025356054306
+test-NLL 0.8666708570718765
+test-Acc 0.8467999970912934
+test-AT_loss 8.682667617797852
+test-VAT_loss 3.8102870893478396
+Epoch: 450 CE_loss_train: 0.22757988210767507 elapsed_time: 73.94123077392578
+Epoch: 451 CE_loss_train: 0.2494044481497258 elapsed_time: 73.48561215400696
+Epoch: 452 CE_loss_train: 0.23806192877702415 elapsed_time: 73.9852294921875
+Epoch: 453 CE_loss_train: 0.22588239513337613 elapsed_time: 73.39841175079346
+Epoch: 454 CE_loss_train: 0.23115131148137152 elapsed_time: 74.03234076499939
+train-NLL 2.899834012453084e-06
+train-Acc 1.0
+train-AT_loss 12.797075853347778
+train-VAT_loss 6.894122397899627
+test-NLL 0.9776851254701614
+test-Acc 0.8452000010013581
+test-AT_loss 18.20130916595459
+test-VAT_loss 8.981430044174195
+Epoch: 455 CE_loss_train: 0.22522007701918484 elapsed_time: 73.61638164520264
+Epoch: 456 CE_loss_train: 0.23043879624456168 elapsed_time: 74.25660347938538
+Epoch: 457 CE_loss_train: 0.24856057235971094 elapsed_time: 73.60646200180054
+Epoch: 458 CE_loss_train: 0.22480856956914066 elapsed_time: 74.15447521209717
+Epoch: 459 CE_loss_train: 0.24284014500677586 elapsed_time: 73.64764642715454
+train-NLL 3.1924023869578377e-06
+train-Acc 1.0
+train-AT_loss 2.1865198159217836
+train-VAT_loss 2.002983350753784
+test-NLL 0.911110711991787
+test-Acc 0.8415999984741211
+test-AT_loss 9.247925071716308
+test-VAT_loss 3.9192196464538576
+Epoch: 460 CE_loss_train: 0.22560234886594116 elapsed_time: 73.63053822517395
+Epoch: 461 CE_loss_train: 0.24371427496895193 elapsed_time: 73.64047932624817
+Epoch: 462 CE_loss_train: 0.2316850301809609 elapsed_time: 74.33047294616699
+Epoch: 463 CE_loss_train: 0.22387383460998536 elapsed_time: 73.55346846580505
+Epoch: 464 CE_loss_train: 0.23099392632953822 elapsed_time: 74.1433892250061
+train-NLL 1.285066054208528e-06
+train-Acc 1.0
+train-AT_loss 3.669755413532257
+train-VAT_loss 3.706775875091553
+test-NLL 1.0213324746489525
+test-Acc 0.8437999963760376
+test-AT_loss 12.047930564880371
+test-VAT_loss 5.626288933753967
+Epoch: 465 CE_loss_train: 0.21539056449197233 elapsed_time: 73.99348902702332
+Epoch: 466 CE_loss_train: 0.2302761541493237 elapsed_time: 73.63690042495728
+Epoch: 467 CE_loss_train: 0.21425552966073155 elapsed_time: 74.28408813476562
+Epoch: 468 CE_loss_train: 0.20792837713845075 elapsed_time: 73.62747025489807
+Epoch: 469 CE_loss_train: 0.22200174606405199 elapsed_time: 74.14443039894104
+train-NLL 1.2197027136551242e-06
+train-Acc 1.0
+train-AT_loss 3.412340784072876
+train-VAT_loss 3.642537226676941
+test-NLL 0.9284027659893036
+test-Acc 0.8487999963760376
+test-AT_loss 12.647820720672607
+test-VAT_loss 5.817907590866088
+Epoch: 470 CE_loss_train: 0.2080842150375247 elapsed_time: 73.6363377571106
+Epoch: 471 CE_loss_train: 0.1880494641792029 elapsed_time: 74.34446740150452
+Epoch: 472 CE_loss_train: 0.21967547956854105 elapsed_time: 73.59748029708862
+Epoch: 473 CE_loss_train: 0.2071460463758558 elapsed_time: 74.22345185279846
+Epoch: 474 CE_loss_train: 0.19762369862757623 elapsed_time: 73.61951422691345
+train-NLL 9.207697254964841e-07
+train-Acc 1.0
+train-AT_loss 2.073801392316818
+train-VAT_loss 2.70091920375824
+test-NLL 0.9317366969585419
+test-Acc 0.8530000019073486
+test-AT_loss 10.060971746444702
+test-VAT_loss 4.610490064620972
+Epoch: 475 CE_loss_train: 0.21991778925061226 elapsed_time: 74.15647530555725
+Epoch: 476 CE_loss_train: 0.18905507551506162 elapsed_time: 73.61642742156982
+Epoch: 477 CE_loss_train: 0.1883895341027528 elapsed_time: 74.15053176879883
+Epoch: 478 CE_loss_train: 0.2092284263111651 elapsed_time: 73.63442635536194
+Epoch: 479 CE_loss_train: 0.18629359890706837 elapsed_time: 74.14451742172241
+train-NLL 6.521325292396795e-07
+train-Acc 1.0
+train-AT_loss 1.9457501471042633
+train-VAT_loss 1.9184921741485597
+test-NLL 0.9370449888706207
+test-Acc 0.8480000030994416
+test-AT_loss 8.969367532730102
+test-VAT_loss 3.572315254211426
+Epoch: 480 CE_loss_train: 0.19236270684748888 elapsed_time: 73.62451386451721
+Epoch: 481 CE_loss_train: 0.17813355865888297 elapsed_time: 74.3714816570282
+Epoch: 482 CE_loss_train: 0.19229574280790984 elapsed_time: 73.78872418403625
+Epoch: 483 CE_loss_train: 0.19482071992009878 elapsed_time: 74.29818987846375
+Epoch: 484 CE_loss_train: 0.1824560680985451 elapsed_time: 73.80953574180603
+train-NLL 8.186482641292514e-07
+train-Acc 1.0
+train-AT_loss 1.6296451425552367
+train-VAT_loss 2.111109492778778
+test-NLL 0.929175808429718
+test-Acc 0.8526000010967255
+test-AT_loss 9.300726289749145
+test-VAT_loss 3.953473858833313
+Epoch: 485 CE_loss_train: 0.1788751699961722 elapsed_time: 74.4051444530487
+Epoch: 486 CE_loss_train: 0.19775253265164794 elapsed_time: 73.79079937934875
+Epoch: 487 CE_loss_train: 0.17851448867470027 elapsed_time: 74.30617380142212
+Epoch: 488 CE_loss_train: 0.17481566940434276 elapsed_time: 73.88553166389465
+Epoch: 489 CE_loss_train: 0.19742347151041031 elapsed_time: 73.86542630195618
+train-NLL 6.57041418605786e-07
+train-Acc 1.0
+train-AT_loss 2.183216531872749
+train-VAT_loss 2.3654303336143494
+test-NLL 0.9151952069997787
+test-Acc 0.8489999997615815
+test-AT_loss 9.406798286437988
+test-VAT_loss 3.6644412088394165
+Epoch: 490 CE_loss_train: 0.18226411178708077 elapsed_time: 73.63245630264282
+Epoch: 491 CE_loss_train: 0.15744765248149634 elapsed_time: 74.13946890830994
+Epoch: 492 CE_loss_train: 0.1814304486475885 elapsed_time: 73.62646746635437
+Epoch: 493 CE_loss_train: 0.1612888500187546 elapsed_time: 74.19248843193054
+Epoch: 494 CE_loss_train: 0.1633367662318051 elapsed_time: 73.53948044776917
+train-NLL 3.679418769308995e-07
+train-Acc 1.0
+train-AT_loss 1.5794349467754365
+train-VAT_loss 2.0992766076326372
+test-NLL 0.9113144528865814
+test-Acc 0.8537999987602234
+test-AT_loss 9.77988392829895
+test-VAT_loss 4.255293483734131
+Epoch: 495 CE_loss_train: 0.1775086707342416 elapsed_time: 74.02076005935669
+Epoch: 496 CE_loss_train: 0.1644948214199394 elapsed_time: 73.55751895904541
+Epoch: 497 CE_loss_train: 0.17548191846348346 elapsed_time: 73.85444450378418
+Epoch: 498 CE_loss_train: 0.17042438755743206 elapsed_time: 73.5169084072113
+Epoch: 499 CE_loss_train: 0.16738600476644933 elapsed_time: 73.90314316749573
+train-NLL 3.3504033815745514e-07
+train-Acc 1.0
+train-AT_loss 1.4060949850082398
+train-VAT_loss 1.9206424164772034
+test-NLL 0.9682066357135772
+test-Acc 0.8493999981880188
+test-AT_loss 9.1459711933136
+test-VAT_loss 3.862201156616211
